@@ -42,10 +42,3 @@ client.chat(
 # )
 
 # puts response.dig("data", 0, "embedding")
-
-# class BugTest < Minitest::Test
-#   def test_stuff
-#     assert "zomg".present?
-#     refute "".present?
-#   end
-# end
