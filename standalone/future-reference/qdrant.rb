@@ -7,11 +7,18 @@ gemfile(true) do
   git_source(:github) { |repo| "https://github.com/#{repo}.git" }
   gem "activesupport", "~> 7.0.0"
   gem "qdrant-ruby"
+  gem "dotenv"
 end
 
 require "active_support"
 require "active_support/core_ext/object/blank"
+require "dotenv/load"
 require "qdrant"
+
+# Qdrant...
+# docker pull qdrant/qdrant
+# docker run -p 6333:6333 qdrant/qdrant
+# docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage qdrant/qdrant
 
 client = Qdrant::Client.new(
   url: ENV["QDRANT_URL"]

@@ -23,5 +23,4 @@ post "/" do
 
   @reply = response.join
   erb :index
-  # redirect to("/")
 end
